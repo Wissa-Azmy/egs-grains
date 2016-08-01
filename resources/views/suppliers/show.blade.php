@@ -15,8 +15,8 @@
 				<input type="text" name="name" placeholder="Item Name" class="form-control">
 				<input type="text" name="price" placeholder="Price" class="form-control" value="{{ old('price') }}">
 				<input type="text" name="qty" placeholder="Quantity" class="form-control">
-				<input type="text" name="consumer_discount" placeholder="Consumer Discount" class="form-control">
-				<input type="text" name="supplier_discount" placeholder="Supplier Discount" class="form-control">
+				{{-- <input type="text" name="consumer_discount" placeholder="Consumer Discount" class="form-control">
+				<input type="text" name="supplier_discount" placeholder="Supplier Discount" class="form-control"> --}}
 
 			</div>
 
@@ -25,14 +25,14 @@
 			</div>
 		</form>
 
-		{{ var_dump($errors) }}
+		{{-- {{ var_dump($errors) }}
 		@if (count($errors))
 			<ul>
 				@foreach ($errors->all() as $error)
 					<li>{{ $error }}</li>
 				@endforeach
 			</ul>
-		@endif
+		@endif --}}
 
 		<hr>
 

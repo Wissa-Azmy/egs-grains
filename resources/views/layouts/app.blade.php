@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
 
+    <link rel="stylesheet" href="{{ URL::to('src/css/main.css') }}">
+
     <style>
         body {
             font-family: 'Lato';
@@ -58,6 +60,7 @@
                     <li><a href="{{ url('/items') }}" class="">Items</a></li>
                     <li><a href="{{ url('/suppliers') }}" class="">Suppliers</a></li>
                     <li><a href="{{ url('/customers') }}" class="">Customers</a></li>
+                    <li><a href="{{ url('/orders') }}" class="">Orders</a></li>
                     <li><a href="{{ url('/invoices') }}" class="">Invoices</a></li>
                 </ul>
 
