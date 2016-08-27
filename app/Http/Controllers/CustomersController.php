@@ -38,4 +38,21 @@ class CustomersController extends Controller
 
 	}
 
+    public function edit(Customer $customer){
+
+        return view('customers.edit', compact('customer'));
+
+    }
+
+    public function update(Request $request, Customer $customer){
+        $customer->update($request->all());
+        return back();
+    }
+
+	public function delete(Customer $customer){
+	    $customer->delete();
+
+        return back();
+    }
+
 }

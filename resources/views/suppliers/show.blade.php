@@ -33,7 +33,6 @@
 				@endforeach
 			</ul>
 		@endif --}}
-
 		<hr>
 
 		<h1>{{$supplier->name}}</h1>

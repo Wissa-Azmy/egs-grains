@@ -48,7 +48,9 @@
 
 	route::post('suppliers', 'SuppliersController@store')->middleware('auth');
 
-	/***********************************/
+    route::get('suppliers/{supplier}/edit', 'SuppliersController@edit')->middleware('auth');
+
+/***********************************/
 
 	route::get('customers', 'CustomersController@index')->middleware('auth');
 
@@ -58,16 +60,26 @@
 
 	route::post('customers', 'CustomersController@store')->middleware('auth');
 
+    route::get('customers/{customer}/edit', 'CustomersController@edit')->middleware('auth');
+
+    route::delete('customers/{customer}', 'CustomersController@delete')->middleware('auth');
+
+    route::patch('customers/{customer}', 'CustomersController@update')->middleware('auth');
+
 	/***********************************/
 
 	route::get('profile', 'UserController@profile');
 	route::post('profile', 'UserController@update_avatar');
 
-
 	/***********************************/
 
+	route::get('orders', 'OrdersController@index')->middleware('auth');
 
-	Route::auth();
+    route::post('orders', 'OrdersController@store')->middleware('auth');
+
+    /***********************************/
+
+Route::auth();
 
 	Route::get('/home', 'HomeController@index');
 

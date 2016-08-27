@@ -36,6 +36,9 @@ class SuppliersController extends Controller
 		$supplier->save();
 
 		return back();
-
 	}
+
+	public function edit(Supplier $supplier){
+	    return view('suppliers.edit', compact('supplier'));
+    }
 }

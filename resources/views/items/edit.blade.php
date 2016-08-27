@@ -1,16 +1,20 @@
-@extends('layout')
+@extends('layouts.app')
 
 @section('content')
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<form method="POST" action="/items/{{$item->id}}">
+				{{method_field('PATCH')}}
+				{{csrf_field()}}
 
-<form method="POST" action="/items/{{$item->id}}">
-{{method_field('PATCH')}}
 
-<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-<div class="form-group">
- 	<input type="text" name="name" value="{{$item->name}}" class="form-control">
- 	<button type="submit" class="btn btn-primary">Edit Item</button>
-</div>
-</form>
-
-@stop
+				<div class="form-group">
+					<input type="text" name="name" value="{{$item->name}}" class="form-control">
+				</div>
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary" class="form-control">Update</button>
+				</div>
+			</form>
+		</div>
+	</div>
+@endsection

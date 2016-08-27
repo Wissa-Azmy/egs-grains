@@ -41,7 +41,7 @@
 			<td><a href="/suppliers/{{$supplier->id}}"> {{$supplier->name}} </a></td>
 			<td>{{$supplier->phone}}</td>
 			<td>{{$supplier->address}}</td>
-			<td><a href="/items/{{$supplier->id}}/edit" class="btn btn-primary">Edit</a></td>
+			<td><a href="/suppliers/{{$supplier->id}}/edit" class="btn btn-primary">Edit</a></td>
 		</tr>
 
 	@endforeach

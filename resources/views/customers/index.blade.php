@@ -42,7 +42,18 @@
 			<td><a href="/customers/{{$customer->id}}"> {{$customer->name}} </a></td>
 			<td>{{$customer->phone}}</td>
 			<td>{{$customer->address}}</td>
-			<td><a href="/items/{{$customer->id}}/edit" class="btn btn-primary">Edit</a></td>
+			<td>
+				<form action="/customers/{{$customer->id}}" method="post">
+					{{method_field('DELETE')}}
+					{{csrf_field()}}
+					<div class="btn-group" role="group" aria-label="...">
+						<a href="/customers/{{$customer->id}}/edit" class="btn btn-primary">Edit</a>
+
+						<button type="submit" class="btn btn-danger">Delete</button>
+					</div>
+
+				</form>
+			</td>
 		</tr>
 
 	@endforeach

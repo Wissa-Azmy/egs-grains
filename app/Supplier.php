@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Supplier extends Model
 {
 	public function items(){
-		return $this->hasMany(item::class);
+		return $this->hasMany(Item::class);
 	}
-    //
 }
