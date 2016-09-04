@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - egs_grains@localhost" uuid="843fe5c4-facb-4edd-a897-0c0379998753">
+    <data-source name="MySQL - egs_grains@localhost" uuid="f05c3e05-6972-4014-87e1-f2cd84b2a759">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
+      <introspection-scope>egs_grains:</introspection-scope>
+      <resolve-scope>egs_grains:</resolve-scope>
     </data-source>
   </component>
 </project>

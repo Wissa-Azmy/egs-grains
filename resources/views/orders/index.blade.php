@@ -31,31 +31,30 @@
                 <div class="form-group">
                     <select name="port" class="form-control">
                         <option value="0">Port</option>
-                        <option value="1">Port 1</option>
-                        <option value="2">Port 2</option>
-                        <option value="3">Port 3</option>
-
+                        <option value="1">دمياط</option>
+                        <option value="2">اسكندرية</option>
+                        <option value="3">الدخيلة</option>
+                        <option value="1">ابوقير</option>
+                        <option value="2">بورسعيد</option>
+                        <option value="3">السويس</option>
+                        <option value="2">الادبية</option>
+                        <option value="3">النهضة</option>
                     </select>
                 </div>
 
                 <div class="form-group">
                     <select name="transportation" class="form-control">
                         <option value="0">Transportation</option>
-                        <option value="1">Transportation 1</option>
-                        <option value="2">Transportation 2</option>
-                        <option value="3">Transportation 3</option>
-
+                        <option value="1">وصالي معبأ</option>
+                        <option value="2">وصالي صب</option>
+                        <option value="3">أرضه معبأ</option>
+                        <option value="3">أرضه صب</option>
                     </select>
                 </div>
 
                 <div class="form-group">
-                    <select name="location" class="form-control">
-                        <option value="0">Location</option>
-                        <option value="1">Location 1</option>
-                        <option value="2">Location 2</option>
-                        <option value="3">Location 3</option>
+                    <input type="text" name="location" placeholder="Location">
 
-                    </select>
                 </div>
 
                 <div class="form-group">
@@ -77,10 +76,12 @@
                 <div class="form-group">
                     <select name="type" class="form-control">
                         <option value="0">Type</option>
-                        <option value="1">Type 1</option>
-                        <option value="2">Type 2</option>
-                        <option value="3">Type 3</option>
-
+                        <option value="1">اوكراني</option>
+                        <option value="2">امريكي</option>
+                        <option value="3">روماني</option>
+                        <option value="1">ارجنتيني</option>
+                        <option value="2">برازيلي</option>
+                        <option value="3">صربي</option>
                     </select>
                 </div>
 
