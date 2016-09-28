@@ -27,6 +27,10 @@ class SuppliersController extends Controller
 	}
 
 	public function store(Request $request){
+
+		$this->validate($request, [
+			'name' => 'required'
+		]);
 		$supplier = new Supplier;
 
 		$supplier->name = $request->name;
@@ -35,6 +39,18 @@ class SuppliersController extends Controller
 
 		$supplier->save();
 
+		return back();
+	}
+
+	
+
+	public function update(Request $request, Supplier $item){
+		$item->update($request->all());
+		return back();
+	}
+
+	public function delete(Supplier $supplier){
+		$supplier->delete();
 		return back();
 	}
 

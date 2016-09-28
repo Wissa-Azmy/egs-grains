@@ -4,8 +4,6 @@
     <data-source name="MySQL - egs_grains@localhost" uuid="f05c3e05-6972-4014-87e1-f2cd84b2a759">
       <secret-storage>master_key</secret-storage>
       <user-name>root</user-name>
-      <introspection-scope>egs_grains:</introspection-scope>
-      <resolve-scope>egs_grains:</resolve-scope>
     </data-source>
   </component>
 </project>

@@ -12,6 +12,8 @@ use App\Item;
 
 use App\Supplier;
 
+use Auth;
+
 class ItemsController extends Controller
 {
 	public function index(){
@@ -25,7 +27,6 @@ class ItemsController extends Controller
 	public function show(Item $item){
 
 		return view('items.show', compact('item'));
-
 	}
 
 	public function  store(Request $request, Supplier $supplier){
@@ -36,7 +37,7 @@ class ItemsController extends Controller
 
 		$item = new Item;
 		$item->name = $request->name;
-		$item->user_id = 1;
+		$item->user_id = Auth::id();
 		$item->price = $request->price;
 		$item->qty = $request->qty;
 
@@ -52,7 +53,6 @@ class ItemsController extends Controller
 	public function edit(Item $item){
 
 		return view('items.edit', compact('item'));
-
 	}
 
     public function update(Request $request, Item $item){

@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Customer;
 
+use Auth;
+
 class CustomersController extends Controller
 {
     
@@ -26,11 +28,16 @@ class CustomersController extends Controller
 	}
 
 	public function store(Request $request){
+
+		$this->validate($request, [
+			'name'=>'required'
+		]);
 		$customer = new Customer;
 
 		$customer->name = $request->name;
 		$customer->phone = $request->phone;
 		$customer->address = $request->address;
+		$customer->user_id = Auth::id();
 
 		$customer->save();
 

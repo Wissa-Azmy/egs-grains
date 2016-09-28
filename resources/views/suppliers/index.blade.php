@@ -11,10 +11,14 @@
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group">
 				<input type="text" name="name" placeholder="Name" class="form-control">
-				<input type="text" name="phone" placeholder="Phone" class="form-control">
-				<input type="text" name="address" placeholder="Address" class="form-control">
-
 			</div>
+			<div class="form-group">
+				<input type="text" name="phone" placeholder="Phone" class="form-control">
+			</div>
+			<div class="form-group">
+					<input type="text" name="address" placeholder="Address" class="form-control">
+			</div>
+
 
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary">Add Supplier</button>
@@ -41,7 +45,21 @@
 			<td><a href="/suppliers/{{$supplier->id}}"> {{$supplier->name}} </a></td>
 			<td>{{$supplier->phone}}</td>
 			<td>{{$supplier->address}}</td>
-			<td><a href="/suppliers/{{$supplier->id}}/edit" class="btn btn-primary">Edit</a></td>
+			<td>
+				{{--</div>--}}
+
+				<form action="/suppliers/{{$supplier->id}}" method="post">
+					{{method_field('DELETE')}}
+					{{csrf_field()}}
+					<div class="btn-group" role="group" aria-label="...">
+						<a href="/suppliers/{{$supplier->id}}/edit" class="btn btn-primary">Edit</a>
+
+						<button type="submit" class="btn btn-danger">Delete</button>
+					</div>
+
+				</form>
+
+			</td>
 		</tr>
 
 	@endforeach

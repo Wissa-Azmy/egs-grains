@@ -3,6 +3,9 @@
 @section('content')
 
     <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <h3>Add a New Order</h3>
+        </div>
 
         <form method="post" action="/orders">
             {{ csrf_field() }}
@@ -93,14 +96,13 @@
                     <input type="text" name="paid" placeholder="Paid">
                 </div>
 
-                <div class="form-group">
-                    <input type="text" name="balance" placeholder="Balance">
-                </div>
+                {{--<div class="form-group">--}}
+                    {{--<input type="text" name="balance" placeholder="Balance">--}}
+                {{--</div>--}}
             </div>
         </form>
 
         <div class="col-md-8 col-md-offset-2">
-
             <hr>
 
             <h1><b>All Orders</b></h1>

@@ -11,14 +11,19 @@
 		<form method="POST" action="/suppliers/{{ $supplier->id }}/items">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group">
-
 				<input type="text" name="name" placeholder="Item Name" class="form-control">
+			</div>
+			<div class="form-group">
 				<input type="text" name="price" placeholder="Price" class="form-control" value="{{ old('price') }}">
+			</div>
+			<div class="form-group">
 				<input type="text" name="qty" placeholder="Quantity" class="form-control">
+			</div>
+
 				{{-- <input type="text" name="consumer_discount" placeholder="Consumer Discount" class="form-control">
 				<input type="text" name="supplier_discount" placeholder="Supplier Discount" class="form-control"> --}}
 
-			</div>
+
 
 			<div class="form-group">
 				<button type="submit" class="btn btn-primary">Add Item</button>
@@ -54,8 +59,22 @@
 			<td>{{$item->name}}</td>
 			<td>{{$item->price}}</td>
 			<td>{{$item->qty}}</td>
-			<td>{{$item->user->name}}</td>
-			<td><a href="/items/{{$item->id}}/edit" class="btn btn-primary">Edit</a></td>
+			<td>{{$item->user->first_name}}</td>
+			<td>
+				{{--</div>--}}
+
+				<form action="/items/{{$item->id}}" method="post">
+					{{method_field('DELETE')}}
+					{{csrf_field()}}
+					<div class="btn-group" role="group" aria-label="...">
+						<a href="/items/{{$item->id}}/edit" class="btn btn-primary">Edit</a>
+
+						<button type="submit" class="btn btn-danger">Delete</button>
+					</div>
+
+				</form>
+
+			</td>
 		</tr>
 
 	@endforeach

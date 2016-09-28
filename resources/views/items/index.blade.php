@@ -14,7 +14,7 @@
 				<th>Price</th>
 				<th>Quantity</th>
 				<th>Supplier</th>
-				<th>Added By</th>
+				{{--<th>Added By</th>--}}
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -26,7 +26,7 @@
 			<td>{{$item->price}}</td>
 			<td>{{$item->qty}}</td>
 			<td>{{$item->supplier->name}}</td>
-			<td>{{$item->user->name}}</td>
+{{--			<td>{{$item->user->name}}</td>--}}
 			<td>
 				{{--</div>--}}
 

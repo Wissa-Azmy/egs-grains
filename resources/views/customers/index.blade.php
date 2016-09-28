@@ -11,9 +11,13 @@
 			{{ csrf_field() }}
 			<div class="form-group">
 				<input type="text" name="name" placeholder="Name" class="form-control">
-				<input type="text" name="phone" placeholder="Phone" class="form-control">
-				<input type="text" name="address" placeholder="Address" class="form-control">
 
+			</div>
+			<div class="form-group">
+				<input type="text" name="phone" placeholder="Phone" class="form-control">
+			</div>
+			<div class="form-group">
+				<input type="text" name="address" placeholder="Address" class="form-control">
 			</div>
 
 			<div class="form-group">
@@ -32,6 +36,7 @@
 				<th>Name</th>
 				<th>Phone</th>
 				<th>Address</th>
+				<th>Added By</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -42,6 +47,7 @@
 			<td><a href="/customers/{{$customer->id}}"> {{$customer->name}} </a></td>
 			<td>{{$customer->phone}}</td>
 			<td>{{$customer->address}}</td>
+			<td>{{$customer->user->first_name}}</td>
 			<td>
 				<form action="/customers/{{$customer->id}}" method="post">
 					{{method_field('DELETE')}}

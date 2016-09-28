@@ -50,6 +50,9 @@
 
     route::get('suppliers/{supplier}/edit', 'SuppliersController@edit')->middleware('auth');
 
+	route::delete('suppliers/{supplier}', 'SuppliersController@delete')->middleware('auth');
+
+
 /***********************************/
 
 	route::get('customers', 'CustomersController@index')->middleware('auth');
