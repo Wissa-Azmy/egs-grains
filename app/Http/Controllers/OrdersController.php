@@ -13,6 +13,8 @@ use App\Customer;
 
 use App\Item;
 
+use Auth;
+
 class OrdersController extends Controller
 {
     public function index(){
@@ -26,18 +28,27 @@ class OrdersController extends Controller
 
     public function store(Request $request){
         $order = new Order;
-
+        
+        $order->item_id = $request->item;
         $order->customer_id = $request->customer;
-        $order->supplieer_id = $request->supplier;
+        $order->supplier_id = $request->supplier;
+        $order->user_id = Auth::id();
         $order->quantity = $request->quantity;
-        $order->paid = $request->paid;
+        $order->unit_price = $request->price;
+        $order->total = $request->total;
         $order->port = $request->port;
         $order->type = $request->type;
+        $order->notes = $request->notes;
         $order->transportation = $request->transportation;
         $order->location = $request->location;
 
         $order->save();
 
+        return back();
+    }
+    
+    public function delete(Order $order){
+        $order->delete();
         return back();
     }
 }

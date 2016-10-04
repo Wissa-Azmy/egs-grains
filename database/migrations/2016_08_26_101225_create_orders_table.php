@@ -14,14 +14,14 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('item_id')->unsigned()->index();
             $table->integer('user_id')->unsigned()->index();
             $table->integer('customer_id')->unsigned()->index();
-            $table->integer('supplieer_id')->unsigned()->index();
+            $table->integer('supplier_id')->unsigned()->index();
             $table->integer('quantity');
             $table->integer('unit_price');
             $table->double('total', 15, 10);
             $table->double('paid', 15, 10);
-            $table->double('balance', 15, 10);
             $table->enum('port', array('1', '2'));
             $table->enum('type', array('1', '2'));
             $table->enum('transportation', array('1', '2'));

@@ -35,6 +35,7 @@
 				<th>Name</th>
 				<th>Phone</th>
 				<th>Address</th>
+				<th>Added By</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -45,6 +46,7 @@
 			<td><a href="/suppliers/{{$supplier->id}}"> {{$supplier->name}} </a></td>
 			<td>{{$supplier->phone}}</td>
 			<td>{{$supplier->address}}</td>
+			<td>{{$supplier->user->first_name}}</td>
 			<td>
 				{{--</div>--}}
 

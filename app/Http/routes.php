@@ -80,6 +80,8 @@
 
     route::post('orders', 'OrdersController@store')->middleware('auth');
 
+	route::delete('orders/{order}', 'OrdersController@delete')->middleware('auth');
+
     /***********************************/
 
 Route::auth();
