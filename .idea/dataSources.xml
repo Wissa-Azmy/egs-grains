@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="DataSourceManagerImpl" format="xml" hash="2867484875">
+  <component name="DataSourceManagerImpl" format="xml">
     <data-source source="LOCAL" name="MySQL - egs_grains@localhost" uuid="f05c3e05-6972-4014-87e1-f2cd84b2a759">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

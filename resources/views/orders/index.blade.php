@@ -106,8 +106,14 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <input type="text" name="price" placeholder="Price" id="price">
+                <div class="form-group form-inline">
+                    <p>
+                        <input type="text" name="price" placeholder="Price" id="price">
+                        <select name="currency" class="form-control">
+                            <option value="0">LE</option>
+                            <option value="1">$</option>
+                        </select>
+                    </p>
                 </div>
 
                 <div class="form-group">
