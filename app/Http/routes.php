@@ -28,6 +28,7 @@
 
 	route::delete('items/{item}', 'ItemsController@delete')->middleware('auth');
 
+	route::post('items', 'ItemsController@store')->middleware('auth');
 	/***********************************/
 
 	route::get('invoices', 'InvoicesController@index')->middleware('auth');
@@ -44,7 +45,7 @@
 
 	route::get('suppliers/{supplier}', 'SuppliersController@show')->middleware('auth');
 
-	route::post('suppliers/{supplier}/items', 'ItemsController@store')->middleware('auth');
+	route::post('suppliers/{supplier}/items', 'SuppliersController@itemStore')->middleware('auth');
 
 	route::post('suppliers', 'SuppliersController@store')->middleware('auth');
 

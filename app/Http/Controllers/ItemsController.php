@@ -29,7 +29,8 @@ class ItemsController extends Controller
 		return view('items.show', compact('item'));
 	}
 
-	public function  store(Request $request, Supplier $supplier){
+//	public function  store(Request $request, Supplier $supplier){
+	public function  store(Request $request){
 
 		$this->validate($request, [
 			'name' => 'required'
@@ -38,10 +39,11 @@ class ItemsController extends Controller
 		$item = new Item;
 		$item->name = $request->name;
 		$item->user_id = Auth::id();
-		$item->price = $request->price;
 		$item->qty = $request->qty;
 
-		$supplier->items()->save($item);
+		$item->save();
+		
+//		$supplier->items()->save($item);
 		// $item->supplier_id = $supplier->id;
 
 		// return $request->all();

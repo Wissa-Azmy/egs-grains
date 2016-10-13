@@ -8,6 +8,9 @@ use App\Http\Requests;
 
 use App\Supplier;
 
+use App\Item;
+
+use Auth;
 
 class SuppliersController extends Controller
 {
@@ -21,8 +24,9 @@ class SuppliersController extends Controller
 
 
 	public function show(Supplier $supplier){
+		$items = Item::all();
 
-		return view('suppliers.show', compact('supplier'));
+		return view('suppliers.show', compact('supplier', 'items'));
 
 	}
 
@@ -36,12 +40,20 @@ class SuppliersController extends Controller
 		$supplier->name = $request->name;
 		$supplier->phone = $request->phone;
 		$supplier->address = $request->address;
-
+		$supplier->user_id = Auth::id();
 		$supplier->save();
 
 		return back();
 	}
 
+	public function itemStore(Supplier $supplier, Request $request){
+
+//		BOTH SYNTAX ARE RIGHT
+//		$supplier->items()->attach($request->item, ['price' => $request->price, 'quantity' => $request->quantity]);
+		$supplier->items()->attach([$request->item => ['quantity' => $request->quantity, 'price' => $request->price]]);
+
+		return back();
+	}
 	
 
 	public function update(Request $request, Supplier $item){

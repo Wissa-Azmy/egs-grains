@@ -5,15 +5,32 @@
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 
+		<h3>Add a New Item</h3>
+
+		<form method="POST" action="/items">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
+			<div class="form-group">
+				<input type="text" name="name" placeholder="Item Name" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<input type="text" name="qty" placeholder="Quantity" class="form-control">
+			</div>
+
+			<div class="form-group">
+				<button type="submit" class="btn btn-primary">Add Item</button>
+			</div>
+		</form>
+
+
+
 <h1><b>All Items</b></h1>
 
 	<table class="table">
 		<thead>
 			<tr>
 				<th>Title</th>
-				<th>Price</th>
 				<th>Quantity</th>
-				<th>Supplier</th>
 				<th>Added By</th>
 				<th>Action</th>
 			</tr>
@@ -23,9 +40,8 @@
 
 		<tr>
 			<td>{{$item->name}}</td>
-			<td>{{$item->price}}</td>
 			<td>{{$item->qty}}</td>
-			<td>{{$item->supplier->name}}</td>
+{{--			<td>{{$item->supplier->name}}</td>--}}
 			<td>{{$item->user->first_name}}</td>
 			<td>
 				{{--</div>--}}

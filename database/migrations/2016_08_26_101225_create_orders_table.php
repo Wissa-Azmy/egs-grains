@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->integer('unit_price');
             $table->double('total', 15, 10);
             $table->double('paid', 15, 10);
+            $table->boolean('currency', array('0', '1'));
             $table->enum('port', array('1', '2'));
             $table->enum('type', array('1', '2'));
             $table->enum('transportation', array('1', '2'));

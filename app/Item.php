@@ -8,8 +8,10 @@ class Item extends Model
 {
 	protected $fillable = ['name'];
 
-	public function supplier(){
-		return $this->belongsTo(Supplier::class);
+	public function suppliers(){
+		return $this->belongsToMany(Supplier::class)
+			->withPivot('quantity', 'price')
+			->withTimestamps();
 	}
     
 	public function orders(){
