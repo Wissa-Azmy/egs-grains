@@ -6,15 +6,15 @@ $(document).ready(function () {
     $("#port").change(function () {
         var val = $(this).val();
         if (val == "1") {
-            $("#subport").html(
+            $("#sub-port").html(
                 "<option value='test'>سيسكو</option>" +
                 "<option value='test2'>س سيرفس</option>"
         );
 
         } else if (val == "2") {
-            $("#subport").html("<option value='test'>item2: test 1</option><option value='test2'>item2: test 2</option>");
+            $("#sub-port").html("<option value='test'>item2: test 1</option><option value='test2'>item2: test 2</option>");
         } else if (val == "3") {
-            $("#subport").html(
+            $("#sub-port").html(
                 "<option value='test'>سيسكو</option>" +
                 "<option value='test2'>س جرين</option>" +
                 "<option value='test2'>يوش جرين</option>" +
@@ -36,4 +36,51 @@ $(document).ready(function () {
         total.val(val1 * val2);
     });
 
+
+    // $('#item').change(function(){
+    //
+    //     $.get("items/supplier", { item: $(this).val() },
+    //
+    //         function(data) {
+    //             console.log(data);
+    //
+    //             var suppliers = $('#supplier');
+    //            
+    //             suppliers.empty();
+    //            
+    //             $.each(data, function(key, value) {
+    //            
+    //                 suppliers.append($("<option></option>").attr("value",key).text(value));
+    //             });
+    //         });
+    // });
+
+    $('#item').change(function () {
+        $.ajax({
+            method: 'post',
+            url: editUrl,
+            data: { itemId:  $('#item').val(), _token: token}
+        })
+            .done(function(data){
+                console.log(data);
+
+                var suppliers = $('#supplier');
+                suppliers.empty();
+                
+                $.each(data, function(key, array) {
+                    $.each(array, function(index,supplier){
+                        suppliers.append($("<option></option>").attr("value",supplier.id).text(supplier.name));
+                    });
+                });
+            });
+    });
+    
 });
+
+
+// If I use POST from the ajax call, I got a TokenMismatch Exception,
+// so if you add the below script in your view file it will work.
+
+// <script>
+// var token = '{{Session::token()}}';
+// </script>

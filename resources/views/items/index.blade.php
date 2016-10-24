@@ -4,9 +4,12 @@
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
+<div class="modal-content">
+	<div class="modal-header">
+		<h3 class="modal-title">Add a New Item</h3>
+	</div>
 
-		<h3>Add a New Item</h3>
-
+	<div class="modal-body">
 		<form method="POST" action="/items">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group">
@@ -21,7 +24,8 @@
 				<button type="submit" class="btn btn-primary">Add Item</button>
 			</div>
 		</form>
-
+	</div>{{--modal-body--}}
+</div>{{--modal-content--}}
 
 
 <h1><b>All Items</b></h1>

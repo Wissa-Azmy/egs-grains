@@ -29,6 +29,9 @@
 	route::delete('items/{item}', 'ItemsController@delete')->middleware('auth');
 
 	route::post('items', 'ItemsController@store')->middleware('auth');
+
+	route::post('items/supplierdropdown', 'ItemsController@dropdown')->name('dropdown');
+
 	/***********************************/
 
 	route::get('invoices', 'InvoicesController@index')->middleware('auth');
@@ -52,7 +55,6 @@
     route::get('suppliers/{supplier}/edit', 'SuppliersController@edit')->middleware('auth');
 
 	route::delete('suppliers/{supplier}', 'SuppliersController@delete')->middleware('auth');
-
 
 /***********************************/
 
@@ -91,3 +93,7 @@ Route::auth();
 
 
 
+//Route::get('items/supplier', function (){
+//   $item= input::get('item');
+//    return Response::json($item);
+//});

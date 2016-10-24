@@ -4,27 +4,30 @@
 @section('content')
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
+	<div class="modal-content">
+<div class="modal-header">
+<h3 class="modal-title">Add a New Customer</h3>
+</div>
+		<div class="modal-body">
+			<form method="POST" action="/customers">
+				{{ csrf_field() }}
+				<div class="form-group">
+					<input type="text" name="name" placeholder="Name" class="form-control">
 
-<h3>Add a New Customer</h3>
+				</div>
+				<div class="form-group">
+					<input type="text" name="phone" placeholder="Phone" class="form-control">
+				</div>
+				<div class="form-group">
+					<input type="text" name="address" placeholder="Address" class="form-control">
+				</div>
 
-		<form method="POST" action="/customers">
-			{{ csrf_field() }}
-			<div class="form-group">
-				<input type="text" name="name" placeholder="Name" class="form-control">
-
-			</div>
-			<div class="form-group">
-				<input type="text" name="phone" placeholder="Phone" class="form-control">
-			</div>
-			<div class="form-group">
-				<input type="text" name="address" placeholder="Address" class="form-control">
-			</div>
-
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Add Customer</button>
-			</div>
-		</form>
-
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Add Customer</button>
+				</div>
+			</form>
+		</div>{{--modal-body--}}
+	</div>{{--modal-content--}}
 	<hr>
 
 

@@ -52,6 +52,23 @@ class ItemsController extends Controller
 
 	}
 
+	public function dropdown(Request $request){
+
+		$input = $request->itemId;
+        $item = Item::find($input);
+
+        $suppliers = $item->suppliers->unique();
+
+//		$suppliers = DB::table('suppliers')
+//			->where('item_id', $input)
+//			->orderBy('created_at', 'desc')
+//			->lists('name','name');
+
+//		return Response::json($item);
+        return response()->json(['suppliers' => $suppliers], 200);
+	}
+    
+
 	public function edit(Item $item){
 
 		return view('items.edit', compact('item'));

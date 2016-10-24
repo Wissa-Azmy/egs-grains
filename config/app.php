@@ -121,6 +121,19 @@ return [
     |
     */
 
+//    'Input' => Illuminate\Support\Facades\Input::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Enabling get request to work
+    |--------------------------------------------------------------------------
+    |
+    | This is used with the dropdown menus get requests sent to the server to
+    | get the submenus of a parent submenu selection.
+    | and it also requires 'php artisan ide-helper:generate' command to be run
+    |
+    */
+
     'providers' => [
 
         /*

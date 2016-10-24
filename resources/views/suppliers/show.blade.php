@@ -5,37 +5,36 @@
 
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
-
-	<h3>Add a New Purchase</h3>
-
-		<form method="POST" action="/suppliers/{{ $supplier->id }}/items">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<div class="form-group">
-				<select name="item" class="form-control">
-					<option value="0">Item</option>
-
-					@foreach ($items as $item)
-						<option value="{{$item->id}}">{{$item->name}}</option>
-					@endforeach
-				</select>
+		<div class="modal-content panel panel-default">
+			<div class="modal-header">
+				<h3 class="modal-title">Add a New Purchase</h3>
 			</div>
-			<div class="form-group">
-				<input type="text" name="price" placeholder="Price" class="form-control" value="{{ old('price') }}">
-			</div>
-			<div class="form-group">
-				<input type="text" name="quantity" placeholder="Quantity" class="form-control">
-			</div>
+			<div class="modal-body">
+			<form method="POST" action="/suppliers/{{ $supplier->id }}/items">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<div class="form-group">
+					<select name="item" class="form-control">
+						<option value="0">Item</option>
 
-				{{-- <input type="text" name="consumer_discount" placeholder="Consumer Discount" class="form-control">
-				<input type="text" name="supplier_discount" placeholder="Supplier Discount" class="form-control"> --}}
+						@foreach ($items as $item)
+							<option value="{{$item->id}}">{{$item->name}}</option>
+						@endforeach
+					</select>
+				</div>
+				<div class="form-group">
+					<input type="text" name="price" placeholder="Price" class="form-control" value="{{ old('price') }}">
+				</div>
+				<div class="form-group">
+					<input type="text" name="quantity" placeholder="Quantity" class="form-control">
+				</div>
 
 
-
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Add Item</button>
-			</div>
-		</form>
-
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Add Item</button>
+				</div>
+			</form>
+            </div>
+		</div>
 		{{-- {{ var_dump($errors) }}
 		@if (count($errors))
 			<ul>

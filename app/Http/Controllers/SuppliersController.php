@@ -48,10 +48,18 @@ class SuppliersController extends Controller
 
 	public function itemStore(Supplier $supplier, Request $request){
 
+        $this->validate($request, [
+           'item' => 'required'
+        ]);
+
 //		BOTH SYNTAX ARE RIGHT
 //		$supplier->items()->attach($request->item, ['price' => $request->price, 'quantity' => $request->quantity]);
 		$supplier->items()->attach([$request->item => ['quantity' => $request->quantity, 'price' => $request->price]]);
 
+        $item = Item::find($request->item);
+        $item->qty += $request->quantity;
+
+        $item->update();
 		return back();
 	}
 	
