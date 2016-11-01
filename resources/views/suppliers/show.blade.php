@@ -12,26 +12,72 @@
 			<div class="modal-body">
 			<form method="POST" action="/suppliers/{{ $supplier->id }}/items">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
-				<div class="form-group">
-					<select name="item" class="form-control">
-						<option value="0">Item</option>
 
-						@foreach ($items as $item)
-							<option value="{{$item->id}}">{{$item->name}}</option>
-						@endforeach
-					</select>
-				</div>
-				<div class="form-group">
+                <div class="form-group form-inline">
+
+                    <div class="form-group" style="width: 48%; margin-right: 3%;">
+                        <select name="item" class="form-control" style="width: 100%;">
+                            <option value="0">Item</option>
+
+                            @foreach ($items as $item)
+                                <option value="{{$item->id}}">{{$item->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 48%; padding: 0%;">
+                        <select name="type" class="form-control" style="width: 100%;">
+                            <option value="0">Type</option>
+                            <option value="1">اوكراني</option>
+                            <option value="2">امريكي</option>
+                            <option value="3">روماني</option>
+                            <option value="1">ارجنتيني</option>
+                            <option value="2">برازيلي</option>
+                            <option value="3">صربي</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group form-inline">
+                    <p>
+                        <select name="port" class="form-control" id="port">
+                            <option value="0">Port</option>
+                            <option value="1">دمياط</option>
+                            <option value="2">اسكندرية</option>
+                            <option value="3">الدخيلة</option>
+                            <option value="1">ابوقير</option>
+                            <option value="2">بورسعيد</option>
+                            <option value="3">السويس</option>
+                            <option value="2">الادبية</option>
+                            <option value="3">النهضة</option>
+                        </select>
+
+                        <select name="sub-port" class="form-control" id="sub-port">
+
+                        </select>
+                    </p>
+                </div>
+
+				<div class="form-group form-inline">
 					<input type="text" name="price" placeholder="Price" class="form-control" value="{{ old('price') }}">
+                    <select name="currency" class="form-control">
+                        <option value="0">LE</option>
+                        <option value="1">$</option>
+                    </select>
 				</div>
 				<div class="form-group">
 					<input type="text" name="quantity" placeholder="Quantity" class="form-control">
 				</div>
 
+                <div class="form-group">
+                    <textarea class="" name="notes" style="width: 100%;" rows="5" placeholder="Add your Notes here..."></textarea>
+                </div>
 
 				<div class="form-group">
 					<button type="submit" class="btn btn-primary">Add Item</button>
 				</div>
+
+
 			</form>
             </div>
 		</div>

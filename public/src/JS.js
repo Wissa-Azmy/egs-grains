@@ -26,14 +26,17 @@ $(document).ready(function () {
         }
     });
 
-    var input = $('#qty,#price'),
+    var input = $('#qty,#price,#expenses'),
         qty = $('#qty'),
         price = $('#price'),
+        expenses = $('#expenses'),
         total = $('#total');
     input.change(function () {
-        var val1 = (isNaN(parseInt(qty.val()))) ? 0 : parseInt(qty.val());
-        var val2 = (isNaN(parseInt(price.val()))) ? 0 : parseInt(price.val());
-        total.val(val1 * val2);
+        var quantity = (isNaN(parseFloat(qty.val()))) ? 0 : parseFloat(qty.val());
+        var val2 = (isNaN(parseFloat(price.val()))) ? 0 : parseFloat(price.val());
+        var val3 = (isNaN(parseFloat(expenses.val()))) ? 0 : parseFloat(expenses.val());
+        var netPrice = val2 + val3;
+        total.val(quantity * netPrice);
     });
 
 

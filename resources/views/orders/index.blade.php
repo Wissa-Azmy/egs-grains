@@ -63,6 +63,11 @@
                             </div>
 
                             <div class="form-group">
+
+                                <input type="text" name="quantity" title="Expenses" placeholder="Expenses" id="expenses">
+                            </div>
+
+                            <div class="form-group">
                                 <input type="text" name="total" readonly="readonly" placeholder="Total" id="total">
                             </div>
 
@@ -77,11 +82,7 @@
                             <div class="col-xs-6">
                             <div class="form-group">
                                 <select name="supplier" class="form-control" id="supplier">
-                                    {{--<option value="0">Supplier</option>--}}
 
-                                    {{--@foreach ($suppliers as $supplier)--}}
-                                        {{--<option value="{{$supplier->id}}">{{$supplier->name}}</option>--}}
-                                    {{--@endforeach--}}
                                 </select>
                             </div>
 
@@ -178,7 +179,6 @@
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </div>
                             </form>
-
                         </td>
                     </tr>
 

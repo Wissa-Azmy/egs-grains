@@ -20,6 +20,7 @@ class CreateOrdersTable extends Migration
             $table->integer('supplier_id')->unsigned()->index();
             $table->integer('quantity');
             $table->integer('unit_price');
+            $table->integer('expenses');
             $table->double('total', 15, 10);
             $table->double('paid', 15, 10);
             $table->boolean('currency', array('0', '1'));
