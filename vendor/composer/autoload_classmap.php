@@ -12,6 +12,8 @@ return array(
     'CreateItemsTable' => $baseDir . '/database/migrations/2016_06_25_150223_create_items_table.php',
     'CreateOrdersTable' => $baseDir . '/database/migrations/2016_08_26_101225_create_orders_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
+    'CreatePortsTable' => $baseDir . '/database/migrations/2016_11_03_103013_create_ports_table.php',
+    'CreateSubportsTable' => $baseDir . '/database/migrations/2016_11_03_103035_create_subports_table.php',
     'CreateSuppliersTable' => $baseDir . '/database/migrations/2016_06_25_160246_create_suppliers_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',

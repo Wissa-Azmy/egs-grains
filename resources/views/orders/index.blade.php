@@ -51,6 +51,7 @@
                                 </select>
 
                                 <select name="sub-port" class="form-control" id="sub-port">
+                                    <option value="0">SubPort</option>
 
                                 </select>
                                 </p>
@@ -58,21 +59,19 @@
 
 
                             <div class="form-group">
-
-                                <input type="text" name="quantity" placeholder="Quantity" id="qty">
+                                <input type="text" class="form-control" name="quantity" placeholder="Quantity" id="qty">
                             </div>
 
                             <div class="form-group">
-
-                                <input type="text" name="quantity" title="Expenses" placeholder="Expenses" id="expenses">
+                                <input type="text" class="form-control" name="expenses" title="Expenses" placeholder="Expenses" id="expenses">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="total" readonly="readonly" placeholder="Total" id="total">
+                                <input type="text" class="form-control" name="total" readonly="readonly" placeholder="Total" id="total">
                             </div>
 
                             <div class="form-group">
-                                <input type="text" name="location" placeholder="Location">
+                                <input type="text" class="form-control" name="location" placeholder="Location">
                             </div>
 
 
@@ -82,6 +81,7 @@
                             <div class="col-xs-6">
                             <div class="form-group">
                                 <select name="supplier" class="form-control" id="supplier">
+                                    <option value="0">Supplier</option>
 
                                 </select>
                             </div>
@@ -112,7 +112,7 @@
 
                             <div class="form-group form-inline">
                                 <p>
-                                    <input type="text" name="price" placeholder="Price" id="price">
+                                    <input type="text" class="form-control" name="price" placeholder="Price" id="price">
                                     <select name="currency" class="form-control">
                                         <option value="0">LE</option>
                                         <option value="1">$</option>
@@ -121,7 +121,7 @@
                             </div>
 
                             <div class="form-group">
-                                <textarea class="" name="notes" style="width: 100%;" rows="5" placeholder="Add your Notes here..."></textarea>
+                                <textarea class="" name="notes" style="width: 100%;" rows="6" placeholder="Add your Notes here..."></textarea>
                             </div>
                         </div>{{--col-xs-6--}}
                         </div> {{--row--}}

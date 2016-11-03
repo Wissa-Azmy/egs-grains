@@ -35,6 +35,12 @@ class CreateItemsTable extends Migration
 
            $table->integer('quantity')->unsignged();
            $table->double('price', 15, 10)->unsigned();
+           $table->double('total',15, 10)->unsigned();
+           $table->boolean('currency', array('0', '1'));
+           $table->integer('type')->unsigned();
+           $table->integer('port')->unsigned();
+           $table->text('notes');
+
            $table->timestamps();
         });
     }
