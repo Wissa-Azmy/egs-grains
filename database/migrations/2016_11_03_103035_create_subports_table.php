@@ -14,6 +14,9 @@ class CreateSubportsTable extends Migration
     {
         Schema::create('subports', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('port_id')->unsigned()->index();
+            $table->integer('user_id')->unsigned()->index();
+            $table->string('name');
             $table->timestamps();
         });
     }

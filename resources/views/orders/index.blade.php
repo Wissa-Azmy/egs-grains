@@ -175,7 +175,8 @@
                                 {{method_field('DELETE')}}
                                 {{csrf_field()}}
                                 <div class="btn-group" role="group" aria-label="...">
-                                    <a href="/orders/{{$order->id}}/edit" class="btn btn-primary">Edit</a>
+                                    {{--<a href="/orders/{{$order->id}}/edit"  class="btn btn-primary edit">Edit</a>--}}
+                                    <a class="btn btn-primary edit">Edit</a>
                                     <button type="submit" class="btn btn-danger">Delete</button>
                                 </div>
                             </form>
@@ -187,11 +188,62 @@
 
             </table>
         </div>
-
     </div>
 
+    <div class="modal fade" tabindex="-1" role="dialog" id="edit-modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Edit Order</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group" id="task-body">
+                            {{--<textarea class="form-control" name="task-body"  rows="4"></textarea>--}}
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"id="task-save">Save changes</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+@endsection
+
+@section('script')
     <script>
+
         var token = '{{Session::token()}}';
         var editUrl = '{{route('dropdown')}}';
+
+
+        $(".edit").click(function(event) {
+            event.preventDefault();
+
+            var taskTitle = event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1];
+            var taskBody = taskTitle.textContent;
+//            var taskId = event.target.parentNode.parentNode.parentNode.dataset['taskid'];
+//            $taskid = taskTitle;
+
+            console.log(taskBody);
+            $('#task-body').val(taskBody);
+            {{--@foreach ($orders as $order)--}}
+                {{--@if ($order->id == $taskid)--}}
+
+            {{--$('#task-body').html(--}}
+                    {{--{{$order->item->name}}--}}
+            {{--);--}}
+
+                {{--@endif--}}
+            {{--@endforeach--}}
+
+            $('#edit-modal').modal();
+        });
+
+
     </script>
 @endsection

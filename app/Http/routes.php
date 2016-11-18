@@ -16,6 +16,8 @@
 
 	route::get('about', 'PagesController@home');
 
+	route::get('settings', 'SettingsController@view');
+
 	/***********************************/
 
 	route::get('items', 'ItemsController@index')->middleware('auth');

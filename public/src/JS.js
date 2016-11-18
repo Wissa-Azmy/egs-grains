@@ -86,3 +86,39 @@ $(document).ready(function () {
 // <script>
 // var token = '{{Session::token()}}';
 // </script>
+
+
+// /*************************** Edit form modal  *********************************/
+
+// var taskId = 0;
+// var taskTitle = null;
+
+// $(".edit").click(function(event) {
+//     event.preventDefault();
+//     taskTitle = event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1];
+//     var taskBody = taskTitle.textContent;
+//     // taskId = event.target.parentNode.parentNode.parentNode.dataset['taskid'];
+//
+//     console.log(taskBody);
+//     // $('#task-body').val(taskBody);
+//     $('#task-body').html(
+//       "@foreach ($orders as $order)"+
+// "@if ($order->id == taskTitle)"+
+//     "{{$order->item->name}}"+
+//    "@endif"+
+//     " @endforeach  "
+//     );
+//     $('#edit-modal').modal();
+// });
+
+// $('#task-save').click(function () {
+//     $.ajax({
+//         method: 'post',
+//         url: editUrl,
+//         data: { body:  $('#task-body').val(), taskId: taskId, _token: token}
+//     })
+//         .done(function(msg){
+//             $(taskTitle).text(msg['new-title']);
+//             $('#edit-modal').modal('hide');
+//         });
+// });

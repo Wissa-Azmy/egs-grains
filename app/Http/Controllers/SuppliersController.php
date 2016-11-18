@@ -54,7 +54,17 @@ class SuppliersController extends Controller
 
 //		BOTH SYNTAX ARE RIGHT
 //		$supplier->items()->attach($request->item, ['price' => $request->price, 'quantity' => $request->quantity]);
-		$supplier->items()->attach([$request->item => ['quantity' => $request->quantity, 'price' => $request->price]]);
+		$supplier->items()->attach([$request->item =>
+			[
+				'type' => $request->type,
+				'quantity' => $request->quantity,
+				'price' => $request->price,
+				'currency' => $request->currency,
+				'total'=> $request->total,
+				'port' => $request->port,
+				'notes' => $request->notes
+			]
+		]);
 
         $item = Item::find($request->item);
         $item->qty += $request->quantity;

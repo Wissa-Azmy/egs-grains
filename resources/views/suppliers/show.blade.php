@@ -42,7 +42,7 @@
 
 				<div class="form-group form-inline">
 					<div class="form-group" style="width: 40%;">
-						<input type="text" name="price" style="width: 100%;" placeholder="Price" class="form-control" value="{{ old('price') }}">
+						<input type="text" name="price" style="width: 100%;" placeholder="Price" id="price" class="form-control" value="{{ old('price') }}">
 					</div>
 
 					<div class="form-group" style="width: 8%; margin-right: 3%;">
@@ -52,14 +52,14 @@
 						</select>
 					</div>
 					<div class="form-group" style="width: 48%; padding: 0%;">
-						<input type="text" name="quantity" style="width: 100%;" placeholder="Quantity" class="form-control" value="{{ old('quantity') }}">
+						<input type="text" name="quantity" style="width: 100%;" placeholder="Quantity" id="qty" class="form-control" value="{{ old('quantity') }}">
 					</div>
 				</div>
 
 				<div class="form-group form-inline">
 					<p>
 					<div class="form-group" style="width: 48%; margin-right: 3%;">
-						<input type="text" name="total" readonly style="width: 100%;" placeholder="Total" class="form-control">
+						<input type="text" name="total" readonly style="width: 100%;" placeholder="Total" id="total" class="form-control">
 					</div>
 
 						<select name="port" class="form-control" id="port">

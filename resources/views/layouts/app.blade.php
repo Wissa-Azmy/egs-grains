@@ -87,7 +87,7 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/profile') }}"><i class="fa fa-btn fa-user"></i>Profile</a></li>
-                                <li><a href="{{ url('/home') }}"><i class="fa fa-btn fa-gear"></i>Settings</a></li>
+                                <li><a href="{{ url('/settings') }}"><i class="fa fa-btn fa-gear"></i>Settings</a></li>
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>
                         </li>
@@ -99,11 +99,25 @@
 
     @yield('content')
 
+
+    {{--<footer id="footer" class="">--}}
+        {{--<p>&copy; 2016 Engiz, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>--}}
+    {{--</footer>--}}
+
+    <footer class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="text-muted">Test Footer</p>
+        </div>
+    </footer>
+
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
     <script src="{{ URL::to('src/JS.js') }}" ></script>
+
+
+    @yield('script')
 
 </body>
 </html>
