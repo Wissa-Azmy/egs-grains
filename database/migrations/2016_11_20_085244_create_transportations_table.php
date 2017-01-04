@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSubportsTable extends Migration
+class CreateTransportationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,14 +12,9 @@ class CreateSubportsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subports', function (Blueprint $table) {
+        Schema::create('transportations', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('port_id')->unsigned()->index();
-            $table->integer('user_id')->unsigned()->index();
             $table->string('name');
-            $table->foreign('port_id')
-                ->references('id')->on('ports')
-                ->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +26,6 @@ class CreateSubportsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('subports');
+        Schema::drop('transportations');
     }
 }

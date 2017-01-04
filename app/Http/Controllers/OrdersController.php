@@ -44,6 +44,10 @@ class OrdersController extends Controller
 
         $order->save();
 
+        $item = Item::find($request->item);
+        $item->qty -= $request->quantity;
+
+        $item->update();
         return back();
     }
     

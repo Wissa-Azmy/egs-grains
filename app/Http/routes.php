@@ -16,7 +16,13 @@
 
 	route::get('about', 'PagesController@home');
 
-	route::get('settings', 'SettingsController@view');
+	route::get('settings', 'SettingsController@view')->middleware('auth');
+	
+	route::post('settings/ports', 'SettingsController@addPort')->name('addPort')->middleware('auth');
+
+	route::post('settings/port/subports', 'SettingsController@loadSubports')->name('viewSubPorts')->middleware('auth');
+
+	route::post('settings/port/delete', 'SettingsController@deletePort')->name('deletePort')->middleware('auth');
 
 	/***********************************/
 
@@ -32,7 +38,7 @@
 
 	route::post('items', 'ItemsController@store')->middleware('auth');
 
-	route::post('items/supplierdropdown', 'ItemsController@dropdown')->name('dropdown');
+	route::post('items/supplierdropdown', 'ItemsController@dropdown')->name('dropdown')->middleware('auth');
 
 	/***********************************/
 
@@ -89,7 +95,7 @@
 
     /***********************************/
 
-Route::auth();
+	Route::auth();
 
 	Route::get('/home', 'HomeController@index');
 

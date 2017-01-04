@@ -15,6 +15,7 @@ return array(
     'CreatePortsTable' => $baseDir . '/database/migrations/2016_11_03_103013_create_ports_table.php',
     'CreateSubportsTable' => $baseDir . '/database/migrations/2016_11_03_103035_create_subports_table.php',
     'CreateSuppliersTable' => $baseDir . '/database/migrations/2016_06_25_160246_create_suppliers_table.php',
+    'CreateTransportationsTable' => $baseDir . '/database/migrations/2016_11_20_085244_create_transportations_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'DatabaseSeeder' => $baseDir . '/database/seeds/DatabaseSeeder.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',

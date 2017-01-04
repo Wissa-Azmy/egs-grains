@@ -20,3 +20,9 @@
 
 body { padding-bottom: 70px; }
 
+#ports, #subports{
+    width:150px
+}
+/*#port option{*/
+    /*width: 150px;*/
+/*}*/

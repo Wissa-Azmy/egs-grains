@@ -4,30 +4,7 @@
 @section('content')
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
-	<div class="modal-content">
-		<div class="modal-header">
-			<h3 class="modal-title">Add a New Supplier</h3>
-		</div>
-	<div class="modal-body">
-		<form method="POST" action="/suppliers">
-			<input type="hidden" name="_token" value="{{ csrf_token() }}">
-			<div class="form-group">
-				<input type="text" name="name" placeholder="Name" class="form-control">
-			</div>
-			<div class="form-group">
-				<input type="text" name="phone" placeholder="Phone" class="form-control">
-			</div>
-			<div class="form-group">
-					<input type="text" name="address" placeholder="Address" class="form-control">
-			</div>
 
-
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Add Supplier</button>
-			</div>
-		</form>
-	</div>{{--modal-body--}}
-	</div>{{--modal-content--}}
 			<hr>
 
 <h1><b>All Suppliers</b></h1>

@@ -62,11 +62,25 @@
                                 <input type="text" class="form-control" name="quantity" placeholder="Quantity" id="qty">
                             </div>
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="expenses" title="Expenses" placeholder="Expenses" id="expenses">
+                            <div class="form-group form-inline">
+                                <input type="text" class="form-control" name="expenses" title="Expenses" placeholder="Expenses" id="expenses" style="width: 30%;">
+
+                                <select name="port" class="form-control" id="port" style="width: 50%;">
+                                    <option value="0">Expenses</option>
+                                    <option value="1">Channel 1</option>
+                                    <option value="2">Channel 2</option>
+                                    <option value="3">Channel 3</option>
+                                </select>
+                                {{--<a href="#" class="add-more-expenses"><i class="fa fa-remove" style="color: red; margin: 0px 5px 0px 5px;" area-hidden="true"></i></a>--}}
+
                             </div>
 
                             <div class="form-group">
+                                <a href="#" class="add-more-expenses"><i class="fa fa-plus" area-hidden="true"></i></a>
+                            </div>
+
+
+                                <div class="form-group">
                                 <input type="text" class="form-control" name="total" readonly="readonly" placeholder="Total" id="total">
                             </div>
 
@@ -217,31 +231,40 @@
 @section('script')
     <script>
 
-        var token = '{{Session::token()}}';
-        var editUrl = '{{route('dropdown')}}';
+        var token = '{{Session::token()}}',
+            editUrl = '{{route('dropdown')}}';
+//                addExpenses_template = <div class="form-group form-inline">
+//                <input type="text" class="form-control" name="expenses" title="Expenses" placeholder="Expenses" id="expenses" style="width: 30%;">
+//
+//                <select name="port" class="form-control" id="port" style="width: 50%;">
+//                <option value="0">Expenses</option>
+//
+//
+//                </select>
+//                <a href="#" class="add-more-expenses"><i class="fa fa-remove" style="color: red; margin: 0px 5px 0px 5px;" area-hidden="true"></i></a></div>;
 
 
+
+        // Edit Order(task) modal
         $(".edit").click(function(event) {
             event.preventDefault();
 
             var taskTitle = event.target.parentNode.parentNode.parentNode.parentNode.childNodes[1];
             var taskBody = taskTitle.textContent;
-//            var taskId = event.target.parentNode.parentNode.parentNode.dataset['taskid'];
-//            $taskid = taskTitle;
 
             console.log(taskBody);
+
             $('#task-body').val(taskBody);
-            {{--@foreach ($orders as $order)--}}
-                {{--@if ($order->id == $taskid)--}}
-
-            {{--$('#task-body').html(--}}
-                    {{--{{$order->item->name}}--}}
-            {{--);--}}
-
-                {{--@endif--}}
-            {{--@endforeach--}}
 
             $('#edit-modal').modal();
+        });
+
+
+        // Add more EXPENSES button
+        $('.add-more-expenses').on('click', function (e) {
+            e.preventDefault();
+
+            $(this).before(addPort_template);
         });
 
 

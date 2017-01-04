@@ -59,6 +59,9 @@ $(document).ready(function () {
     // });
 
     $('#item').change(function () {
+        var suppliers = $('#supplier');
+        suppliers.empty();
+
         $.ajax({
             method: 'post',
             url: editUrl,
@@ -66,9 +69,6 @@ $(document).ready(function () {
         })
             .done(function(data){
                 console.log(data);
-
-                var suppliers = $('#supplier');
-                suppliers.empty();
                 
                 $.each(data, function(key, array) {
                     $.each(array, function(index,supplier){
@@ -77,6 +77,8 @@ $(document).ready(function () {
                 });
             });
     });
+
+
 });
 
 
